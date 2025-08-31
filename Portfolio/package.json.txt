@@ -1,0 +1,577 @@
+
+Action: view_bulk --path-list /app/frontend/package.json,/app/frontend/src/App.js,/app/frontend/src/components/Portfolio.jsx,/app/frontend/src/data/mock.js
+Observation: /app/frontend/package.json:
+1|{
+2|  "name": "frontend",
+3|  "version": "0.1.0",
+4|  "private": true,
+5|  "homepage": "https://Ipshita09N.github.io/portfolio",
+6|  "dependencies": {
+7|    "@hookform/resolvers": "^5.0.1",
+8|    "@radix-ui/react-accordion": "^1.2.8",
+9|    "@radix-ui/react-alert-dialog": "^1.1.11",
+10|    "@radix-ui/react-aspect-ratio": "^1.1.4",
+11|    "@radix-ui/react-avatar": "^1.1.7",
+12|    "@radix-ui/react-checkbox": "^1.2.3",
+13|    "@radix-ui/react-collapsible": "^1.1.8",
+14|    "@radix-ui/react-context-menu": "^2.2.12",
+15|    "@radix-ui/react-dialog": "^1.1.11",
+16|    "@radix-ui/react-dropdown-menu": "^2.1.12",
+17|    "@radix-ui/react-hover-card": "^1.1.11",
+18|    "@radix-ui/react-label": "^2.1.4",
+19|    "@radix-ui/react-menubar": "^1.1.12",
+20|    "@radix-ui/react-navigation-menu": "^1.2.10",
+21|    "@radix-ui/react-popover": "^1.1.11",
+22|    "@radix-ui/react-progress": "^1.1.4",
+23|    "@radix-ui/react-radio-group": "^1.3.4",
+24|    "@radix-ui/react-scroll-area": "^1.2.6",
+25|    "@radix-ui/react-select": "^2.2.2",
+26|    "@radix-ui/react-separator": "^1.1.4",
+27|    "@radix-ui/react-slider": "^1.3.2",
+28|    "@radix-ui/react-slot": "^1.2.0",
+29|    "@radix-ui/react-switch": "^1.2.2",
+30|    "@radix-ui/react-tabs": "^1.1.9",
+31|    "@radix-ui/react-toast": "^1.2.11",
+32|    "@radix-ui/react-toggle": "^1.1.6",
+33|    "@radix-ui/react-toggle-group": "^1.1.7",
+34|    "@radix-ui/react-tooltip": "^1.2.4",
+35|    "axios": "^1.8.4",
+36|    "class-variance-authority": "^0.7.1",
+37|    "clsx": "^2.1.1",
+38|    "cmdk": "^1.1.1",
+39|    "cra-template": "1.2.0",
+40|    "date-fns": "^4.1.0",
+41|    "embla-carousel-react": "^8.6.0",
+42|    "input-otp": "^1.4.2",
+43|    "lucide-react": "^0.507.0",
+44|    "next-themes": "^0.4.6",
+45|    "react": "^19.0.0",
+46|    "react-day-picker": "8.10.1",
+47|    "react-dom": "^19.0.0",
+48|    "react-hook-form": "^7.56.2",
+49|    "react-resizable-panels": "^3.0.1",
+50|    "react-router-dom": "^7.5.1",
+51|    "react-scripts": "5.0.1",
+52|    "sonner": "^2.0.3",
+53|    "tailwind-merge": "^3.2.0",
+54|    "tailwindcss-animate": "^1.0.7",
+55|    "vaul": "^1.1.2",
+56|    "zod": "^3.24.4"
+57|  },
+58|  "scripts": {
+59|    "start": "craco start",
+60|    "build": "craco build",
+61|    "test": "craco test",
+62|    "predeploy": "yarn build",
+63|    "deploy": "gh-pages -d build"
+64|  },
+65|  "browserslist": {
+66|    "production": [
+67|      ">0.2%",
+68|      "not dead",
+69|      "not op_mini all"
+70|    ],
+71|    "development": [
+72|      "last 1 chrome version",
+73|      "last 1 firefox version",
+74|      "last 1 safari version"
+75|    ]
+76|  },
+77|  "devDependencies": {
+78|    "@craco/craco": "^7.1.0",
+79|    "@eslint/js": "9.23.0",
+80|    "autoprefixer": "^10.4.20",
+81|    "eslint": "9.23.0",
+82|    "eslint-plugin-import": "2.31.0",
+83|    "eslint-plugin-jsx-a11y": "6.10.2",
+84|    "eslint-plugin-react": "7.37.4",
+85|    "gh-pages": "^6.3.0",
+86|    "globals": "15.15.0",
+87|    "postcss": "^8.4.49",
+88|    "tailwindcss": "^3.4.17"
+89|  },
+90|  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+91|}
+92|
+
+
+/app/frontend/src/App.js:
+1|import React from "react";
+2|import "./App.css";
+3|import { BrowserRouter, Routes, Route } from "react-router-dom";
+4|import Portfolio from "./components/Portfolio";
+5|
+6|function App() {
+7|  return (
+8|    <div className="App">
+9|      <BrowserRouter>
+10|        <Routes>
+11|          <Route path="/" element={<Portfolio />} />
+12|        </Routes>
+13|      </BrowserRouter>
+14|    </div>
+15|  );
+16|}
+17|
+18|export default App;
+
+
+/app/frontend/src/components/Portfolio.jsx:
+1|import React, { useState, useEffect } from 'react';
+2|import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+3|import { Badge } from './ui/badge';
+4|import { Button } from './ui/button';
+5|import { Separator } from './ui/separator';
+6|import { 
+7|  MapPin, 
+8|  Phone, 
+9|  Mail, 
+10|  Linkedin, 
+11|  Code, 
+12|  Database, 
+13|  Brain, 
+14|  Server,
+15|  Award,
+16|  Calendar,
+17|  ExternalLink,
+18|  Github,
+19|  ChevronRight,
+20|  Briefcase,
+21|  GraduationCap
+22|} from 'lucide-react';
+23|import { mockData } from '../data/mock';
+24|
+25|const Portfolio = () => {
+26|  const [activeSection, setActiveSection] = useState('hero');
+27|
+28|  useEffect(() => {
+29|    const handleScroll = () => {
+30|      const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact'];
+31|      const scrollPosition = window.scrollY + 100;
+32|      
+33|      for (let i = sections.length - 1; i >= 0; i--) {
+34|        const element = document.getElementById(sections[i]);
+35|        if (element && scrollPosition >= element.offsetTop) {
+36|          setActiveSection(sections[i]);
+37|          break;
+38|        }
+39|      }
+40|    };
+41|
+42|    window.addEventListener('scroll', handleScroll);
+43|    return () => window.removeEventListener('scroll', handleScroll);
+44|  }, []);
+45|
+46|  const scrollToSection = (sectionId) => {
+47|    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+48|  };
+49|
+50|  return (
+51|    <div className="min-h-screen bg-gray-50">
+52|      {/* Navigation */}
+53|      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+54|        <div className="max-w-6xl mx-auto px-6 py-4">
+55|          <div className="flex justify-between items-center">
+56|            <div className="text-xl font-semibold text-gray-900">Ipshita</div>
+57|            <div className="hidden md:flex space-x-8">
+58|              {['About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
+59|                <button
+60|                  key={item}
+61|                  onClick={() => scrollToSection(item.toLowerCase())}
+62|                  className={`text-sm transition-colors hover:text-blue-600 ${
+63|                    activeSection === item.toLowerCase() ? 'text-blue-600' : 'text-gray-600'
+64|                  }`}
+65|                >
+66|                  {item}
+67|                </button>
+68|              ))}
+69|            </div>
+70|          </div>
+71|        </div>
+72|      </nav>
+73|
+74|      {/* Hero Section */}
+75|      <section id="hero" className="pt-20 pb-16 px-6">
+76|        <div className="max-w-6xl mx-auto">
+77|          <div className="text-center py-20">
+78|            <div className="mb-6">
+79|              <h1 className="text-5xl md:text-7xl font-light text-gray-900 mb-4 tracking-tight">
+80|                {mockData.personal.name}
+81|              </h1>
+82|              <p className="text-xl md:text-2xl text-gray-600 font-light">
+83|                {mockData.personal.title}
+84|              </p>
+85|            </div>
+86|            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
+87|              {mockData.personal.tagline}
+88|            </p>
+89|            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+90|              <Button 
+91|                onClick={() => scrollToSection('projects')}
+92|                className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3"
+93|              >
+94|                View My Work
+95|                <ChevronRight className="ml-2 h-4 w-4" />
+96|              </Button>
+97|              <Button 
+98|                variant="outline" 
+99|                onClick={() => scrollToSection('contact')}
+100|                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3"
+101|              >
+102|                Get In Touch
+103|              </Button>
+104|            </div>
+105|          </div>
+106|        </div>
+107|      </section>
+108|
+109|      {/* About Section */}
+110|      <section id="about" className="py-20 px-6 bg-white">
+111|        <div className="max-w-6xl mx-auto">
+112|          <h2 className="text-4xl font-light text-gray-900 mb-12 text-center">About Me</h2>
+113|          <div className="grid md:grid-cols-2 gap-16 items-center">
+114|            <div>
+115|              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+116|                {mockData.personal.bio}
+117|              </p>
+118|              <div className="space-y-4">
+119|                <div className="flex items-center text-gray-600">
+120|                  <MapPin className="h-5 w-5 mr-3" />
+121|                  <span>{mockData.personal.location}</span>
+122|                </div>
+123|                <div className="flex items-center text-gray-600">
+124|                  <GraduationCap className="h-5 w-5 mr-3" />
+125|                  <span>BTech Electronics & Communication (2025)</span>
+126|                </div>
+127|                <div className="flex items-center text-gray-600">
+128|                  <Award className="h-5 w-5 mr-3" />
+129|                  <span>Cisco Certified - Computer Networking (2024)</span>
+130|                </div>
+131|              </div>
+132|            </div>
+133|            <div className="bg-gray-50 p-8 rounded-lg">
+134|              <h3 className="text-xl font-medium text-gray-900 mb-6">Education & Certifications</h3>
+135|              <div className="space-y-6">
+136|                {mockData.education.map((edu, index) => (
+137|                  <div key={index} className="border-l-2 border-blue-200 pl-4">
+138|                    <h4 className="font-medium text-gray-900">{edu.degree}</h4>
+139|                    <p className="text-gray-600">{edu.institution}</p>
+140|                    <p className="text-sm text-gray-500">{edu.duration}</p>
+141|                    {edu.description && (
+142|                      <p className="text-sm text-gray-600 mt-2">{edu.description}</p>
+143|                    )}
+144|                  </div>
+145|                ))}
+146|              </div>
+147|            </div>
+148|          </div>
+149|        </div>
+150|      </section>
+151|
+152|      {/* Skills Section */}
+153|      <section id="skills" className="py-20 px-6 bg-gray-50">
+154|        <div className="max-w-6xl mx-auto">
+155|          <h2 className="text-4xl font-light text-gray-900 mb-16 text-center">Technical Skills</h2>
+156|          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+157|            {mockData.skills.map((skillGroup, index) => (
+158|              <Card key={index} className="border-0 shadow-sm hover:shadow-md transition-shadow">
+159|                <CardHeader className="pb-3">
+160|                  <CardTitle className="text-lg text-gray-900 flex items-center">
+161|                    {index === 0 && <Brain className="h-5 w-5 mr-2 text-blue-600" />}
+162|                    {index === 1 && <Server className="h-5 w-5 mr-2 text-green-600" />}
+163|                    {index === 2 && <Code className="h-5 w-5 mr-2 text-purple-600" />}
+164|                    {index === 3 && <Briefcase className="h-5 w-5 mr-2 text-orange-600" />}
+165|                    {skillGroup.category}
+166|                  </CardTitle>
+167|                </CardHeader>
+168|                <CardContent>
+169|                  <div className="flex flex-wrap gap-2">
+170|                    {skillGroup.items.map((skill, skillIndex) => (
+171|                      <Badge 
+172|                        key={skillIndex} 
+173|                        variant="secondary" 
+174|                        className="bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+175|                      >
+176|                        {skill}
+177|                      </Badge>
+178|                    ))}
+179|                  </div>
+180|                </CardContent>
+181|              </Card>
+182|            ))}
+183|          </div>
+184|        </div>
+185|      </section>
+186|
+187|      {/* Experience Section */}
+188|      <section id="experience" className="py-20 px-6 bg-white">
+189|        <div className="max-w-6xl mx-auto">
+190|          <h2 className="text-4xl font-light text-gray-900 mb-16 text-center">Experience</h2>
+191|          <div className="space-y-12">
+192|            {mockData.experience.map((exp, index) => (
+193|              <Card key={exp.id} className="border-0 shadow-sm hover:shadow-md transition-shadow">
+194|                <CardHeader>
+195|                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+196|                    <div>
+197|                      <CardTitle className="text-xl text-gray-900">{exp.title}</CardTitle>
+198|                      <CardDescription className="text-lg text-blue-600 font-medium">
+199|                        {exp.company}
+200|                      </CardDescription>
+201|                      <div className="flex items-center text-gray-500 mt-2">
+202|                        <MapPin className="h-4 w-4 mr-1" />
+203|                        <span className="mr-4">{exp.location}</span>
+204|                        <Calendar className="h-4 w-4 mr-1" />
+205|                        <span>{exp.duration}</span>
+206|                      </div>
+207|                    </div>
+208|                  </div>
+209|                </CardHeader>
+210|                <CardContent>
+211|                  <p className="text-gray-700 mb-4">{exp.description}</p>
+212|                  <ul className="space-y-2">
+213|                    {exp.achievements.map((achievement, achIndex) => (
+214|                      <li key={achIndex} className="flex items-start text-gray-600">
+215|                        <ChevronRight className="h-4 w-4 mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
+216|                        <span>{achievement}</span>
+217|                      </li>
+218|                    ))}
+219|                  </ul>
+220|                </CardContent>
+221|              </Card>
+222|            ))}
+223|          </div>
+224|        </div>
+225|      </section>
+226|
+227|      {/* Projects Section */}
+228|      <section id="projects" className="py-20 px-6 bg-gray-50">
+229|        <div className="max-w-6xl mx-auto">
+230|          <h2 className="text-4xl font-light text-gray-900 mb-16 text-center">Featured Projects</h2>
+231|          <div className="grid md:grid-cols-2 gap-8">
+232|            {mockData.projects.map((project) => (
+233|              <Card key={project.id} className="border-0 shadow-sm hover:shadow-lg transition-all duration-300 group">
+234|                <CardHeader>
+235|                  <div className="flex justify-between items-start">
+236|                    <Badge variant="outline" className="mb-3">
+237|                      {project.category}
+238|                    </Badge>
+239|                  </div>
+240|                  <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors">
+241|                    {project.title}
+242|                  </CardTitle>
+243|                  <CardDescription className="text-gray-500">
+244|                    {project.duration}
+245|                  </CardDescription>
+246|                </CardHeader>
+247|                <CardContent>
+248|                  <p className="text-gray-700 mb-4">{project.description}</p>
+249|                  
+250|                  <div className="mb-4">
+251|                    <h4 className="text-sm font-medium text-gray-900 mb-2">Technologies Used:</h4>
+252|                    <div className="flex flex-wrap gap-2">
+253|                      {project.technologies.map((tech, techIndex) => (
+254|                        <Badge 
+255|                          key={techIndex} 
+256|                          variant="secondary"
+257|                          className="bg-blue-50 text-blue-700 hover:bg-blue-100"
+258|                        >
+259|                          {tech}
+260|                        </Badge>
+261|                      ))}
+262|                    </div>
+263|                  </div>
+264|
+265|                  <div className="mb-4">
+266|                    <h4 className="text-sm font-medium text-gray-900 mb-2">Key Achievements:</h4>
+267|                    <ul className="space-y-1">
+268|                      {project.achievements.slice(0, 2).map((achievement, achIndex) => (
+269|                        <li key={achIndex} className="flex items-start text-sm text-gray-600">
+270|                          <ChevronRight className="h-3 w-3 mr-2 mt-1 text-blue-500 flex-shrink-0" />
+271|                          <span>{achievement}</span>
+272|                        </li>
+273|                      ))}
+274|                    </ul>
+275|                  </div>
+276|                </CardContent>
+277|              </Card>
+278|            ))}
+279|          </div>
+280|        </div>
+281|      </section>
+282|
+283|      {/* Contact Section */}
+284|      <section id="contact" className="py-20 px-6 bg-white">
+285|        <div className="max-w-4xl mx-auto text-center">
+286|          <h2 className="text-4xl font-light text-gray-900 mb-8">Let's Connect</h2>
+287|          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+288|            I'm always open to discussing new opportunities, collaborations, or just having a conversation about technology and innovation.
+289|          </p>
+290|          
+291|          <div className="grid md:grid-cols-3 gap-8 mb-12">
+292|            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+293|              <Phone className="h-8 w-8 text-blue-600 mb-4" />
+294|              <h3 className="font-medium text-gray-900 mb-2">Phone</h3>
+295|              <p className="text-gray-600">{mockData.personal.phone}</p>
+296|            </div>
+297|            
+298|            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+299|              <Mail className="h-8 w-8 text-blue-600 mb-4" />
+300|              <h3 className="font-medium text-gray-900 mb-2">Email</h3>
+301|              <p className="text-gray-600">{mockData.personal.email}</p>
+302|            </div>
+303|            
+304|            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+305|              <Linkedin className="h-8 w-8 text-blue-600 mb-4" />
+306|              <h3 className="font-medium text-gray-900 mb-2">LinkedIn</h3>
+307|              <p className="text-gray-600">Connect with me</p>
+308|            </div>
+309|          </div>
+310|          
+311|          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+312|            <Button 
+313|              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+314|              onClick={() => window.open(`mailto:${mockData.personal.email}`)}
+315|            >
+316|              <Mail className="mr-2 h-4 w-4" />
+317|              Send Email
+318|            </Button>
+319|            <Button 
+320|              variant="outline"
+321|              className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3"
+322|              onClick={() => window.open(mockData.personal.linkedin)}
+323|            >
+324|              <Linkedin className="mr-2 h-4 w-4" />
+325|              LinkedIn Profile
+326|            </Button>
+327|          </div>
+328|        </div>
+329|      </section>
+330|
+331|      {/* Footer */}
+332|      <footer className="bg-gray-900 text-white py-12 px-6">
+333|        <div className="max-w-6xl mx-auto text-center">
+334|          <p className="text-gray-400">
+335|            © 2025 {mockData.personal.name}. Designed with passion for technology and innovation.
+336|          </p>
+337|        </div>
+338|      </footer>
+339|    </div>
+340|  );
+341|};
+342|
+343|export default Portfolio;
+
+
+/app/frontend/src/data/mock.js:
+1|// Mock data for Ipshita's portfolio
+2|export const mockData = {
+3|  personal: {
+4|    name: "Ipshita",
+5|    title: "Electronics & Communication Engineer",
+6|    tagline: "Bridging Hardware & Software Through Intelligent Solutions",
+7|    location: "Lucknow, India",
+8|    phone: "+918410076128",
+9|    email: "nehraipshita09@gmail.com",
+10|    linkedin: "https://linkedin.com/in/ipshita",
+11|    bio: "Detail-oriented engineer with experience in Microsoft solutions, machine learning, and Generative AI. I specialize in data analytics, network administration, and creating intelligent systems that solve real-world problems. My journey spans from hardware fundamentals to cutting-edge AI applications, with a focus on practical implementation and process optimization."
+12|  },
+13|  
+14|  skills: [
+15|    {
+16|      category: "Data & AI",
+17|      items: ["Machine Learning", "Generative AI", "Data Analysis", "Data Visualization", "Computer Vision", "Deep Learning"]
+18|    },
+19|    {
+20|      category: "Microsoft Technologies",
+21|      items: ["Azure", "Power Platform", "Dynamics 365", "Microsoft Solutions"]
+22|    },
+23|    {
+24|      category: "Technical Skills",
+25|      items: ["Database Management", "Network Administration", "Software Development", "MATLAB", "Python"]
+26|    },
+27|    {
+28|      category: "Professional Skills",
+29|      items: ["Project Management", "Workflow Optimization", "Critical Thinking", "Technical Communication"]
+30|    }
+31|  ],
+32|  
+33|  experience: [
+34|    {
+35|      id: 1,
+36|      title: "Microsoft Solutions Intern",
+37|      company: "Amplify Software Solutions",
+38|      location: "Gurugram, Haryana",
+39|      duration: "Feb 2025 - May 2025",
+40|      description: "Collaborated on optimizing Microsoft-based solutions by enhancing structured content for the company's website, improving usability and user engagement. Utilized core Microsoft technologies such as Azure and Power Platform to streamline business workflows, achieving significant efficiency increases.",
+41|      achievements: [
+42|        "Enhanced website usability and user engagement",
+43|        "Streamlined business workflows using Azure and Power Platform",
+44|        "Gained hands-on experience with Dynamics 365 applications"
+45|      ]
+46|    },
+47|    {
+48|      id: 2,
+49|      title: "Summer Intern",
+50|      company: "RCMA, Hindustan Aeronautics Limited",
+51|      location: "Lucknow, Uttar Pradesh", 
+52|      duration: "May 2024 - Jul 2024",
+53|      description: "Collaborated with a multidisciplinary team to collect and analyze data for project reporting. Developed technical reports and presentations, effectively communicating project insights to senior management.",
+54|      achievements: [
+55|        "Developed GUI using MATLAB for brain tumor detection in MRI images",
+56|        "Utilized computer vision, deep learning, and morphological operations",
+57|        "Successfully completed high-impact engineering project"
+58|      ]
+59|    }
+60|  ],
+61|  
+62|  education: [
+63|    {
+64|      degree: "BTech in Electronics and Communication",
+65|      institution: "Banasthali Vidyapith",
+66|      location: "Jaipur, Rajasthan",
+67|      duration: "Jul 2021 - Jun 2025",
+68|      status: "Current"
+69|    },
+70|    {
+71|      degree: "Diploma in Computer Networking",
+72|      institution: "Cisco",
+73|      location: "Online",
+74|      duration: "2024",
+75|      status: "Completed",
+76|      description: "1.5 year comprehensive program covering network fundamentals, administration, and security"
+77|    }
+78|  ],
+79|  
+80|  projects: [
+81|    {
+82|      id: 1,
+83|      title: "Weather Impact Analysis on Trains",
+84|      duration: "Apr 2025 - Jun 2025",
+85|      description: "Conducted end-to-end data pipeline including data cleaning, preprocessing, feature extraction, and dataset integration.",
+86|      technologies: ["Python", "Linear Regression", "Random Forest", "EDA", "Data Analytics"],
+87|      achievements: [
+88|        "Engineered advanced features comparing Linear Regression and Random Forest models",
+89|        "Achieved superior accuracy with ensemble methods",
+90|        "Identified fog and visibility as critical predictors of delays",
+91|        "Delivered actionable insights for railway operations and scheduling"
+92|      ],
+93|      category: "Machine Learning"
+94|    },
+95|    {
+96|      id: 2,
+97|      title: "Brain Tumor Detection System",
+98|      duration: "2024",
+99|      description: "Developed an intuitive GUI for brain tumor detection in MRI images, leveraging publicly available datasets to facilitate medical diagnostics.",
+100|      technologies: ["MATLAB", "Computer Vision", "CNN", "Deep Learning", "Image Processing"],
+101|      achievements: [
+102|        "Designed advanced image processing workflows including pre-processing and segmentation",
+103|        "Implemented feature extraction to improve tumor detection accuracy",
+104|        "Reduced computational overhead by 25% using MATLAB's computer vision libraries",
+105|        "Created user-friendly GUI for medical professionals"
+106|      ],
+107|      category: "Computer Vision"
+108|    }
+109|  ]
+110|};
+
+

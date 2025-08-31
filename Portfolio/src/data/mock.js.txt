@@ -1,0 +1,111 @@
+
+// Mock data for Ipshita's portfolio
+export const mockData = {
+  personal: {
+    name: "Ipshita",
+    title: "Electronics & Communication Engineer",
+    tagline: "Bridging Hardware & Software Through Intelligent Solutions",
+    location: "Lucknow, India",
+    phone: "+918410076128",
+    email: "nehraipshita09@gmail.com",
+    linkedin: "https://linkedin.com/in/ipshita",
+    bio: "Detail-oriented engineer with experience in Microsoft solutions, machine learning, and Generative AI. I specialize in data analytics, network administration, and creating intelligent systems that solve real-world problems. My journey spans from hardware fundamentals to cutting-edge AI applications, with a focus on practical implementation and process optimization."
+  },
+  
+  skills: [
+    {
+      category: "Data & AI",
+      items: ["Machine Learning", "Generative AI", "Data Analysis", "Data Visualization", "Computer Vision", "Deep Learning"]
+    },
+    {
+      category: "Microsoft Technologies",
+      items: ["Azure", "Power Platform", "Dynamics 365", "Microsoft Solutions"]
+    },
+    {
+      category: "Technical Skills",
+      items: ["Database Management", "Network Administration", "Software Development", "MATLAB", "Python"]
+    },
+    {
+      category: "Professional Skills",
+      items: ["Project Management", "Workflow Optimization", "Critical Thinking", "Technical Communication"]
+    }
+  ],
+  
+  experience: [
+    {
+      id: 1,
+      title: "Microsoft Solutions Intern",
+      company: "Amplify Software Solutions",
+      location: "Gurugram, Haryana",
+      duration: "Feb 2025 - May 2025",
+      description: "Collaborated on optimizing Microsoft-based solutions by enhancing structured content for the company's website, improving usability and user engagement. Utilized core Microsoft technologies such as Azure and Power Platform to streamline business workflows, achieving significant efficiency increases.",
+      achievements: [
+        "Enhanced website usability and user engagement",
+        "Streamlined business workflows using Azure and Power Platform",
+        "Gained hands-on experience with Dynamics 365 applications"
+      ]
+    },
+    {
+      id: 2,
+      title: "Summer Intern",
+      company: "RCMA, Hindustan Aeronautics Limited",
+      location: "Lucknow, Uttar Pradesh", 
+      duration: "May 2024 - Jul 2024",
+      description: "Collaborated with a multidisciplinary team to collect and analyze data for project reporting. Developed technical reports and presentations, effectively communicating project insights to senior management.",
+      achievements: [
+        "Developed GUI using MATLAB for brain tumor detection in MRI images",
+        "Utilized computer vision, deep learning, and morphological operations",
+        "Successfully completed high-impact engineering project"
+      ]
+    }
+  ],
+  
+  education: [
+    {
+      degree: "BTech in Electronics and Communication",
+      institution: "Banasthali Vidyapith",
+      location: "Jaipur, Rajasthan",
+      duration: "Jul 2021 - Jun 2025",
+      status: "Current"
+    },
+    {
+      degree: "Diploma in Computer Networking",
+      institution: "Cisco",
+      location: "Online",
+      duration: "2024",
+      status: "Completed",
+      description: "1.5 year comprehensive program covering network fundamentals, administration, and security"
+    }
+  ],
+  
+  projects: [
+    {
+      id: 1,
+      title: "Weather Impact Analysis on Trains",
+      duration: "Apr 2025 - Jun 2025",
+      description: "Conducted end-to-end data pipeline including data cleaning, preprocessing, feature extraction, and dataset integration.",
+      technologies: ["Python", "Linear Regression", "Random Forest", "EDA", "Data Analytics"],
+      achievements: [
+        "Engineered advanced features comparing Linear Regression and Random Forest models",
+        "Achieved superior accuracy with ensemble methods",
+        "Identified fog and visibility as critical predictors of delays",
+        "Delivered actionable insights for railway operations and scheduling"
+      ],
+      category: "Machine Learning"
+    },
+    {
+      id: 2,
+      title: "Brain Tumor Detection System",
+      duration: "2024",
+      description: "Developed an intuitive GUI for brain tumor detection in MRI images, leveraging publicly available datasets to facilitate medical diagnostics.",
+      technologies: ["MATLAB", "Computer Vision", "CNN", "Deep Learning", "Image Processing"],
+      achievements: [
+        "Designed advanced image processing workflows including pre-processing and segmentation",
+        "Implemented feature extraction to improve tumor detection accuracy",
+        "Reduced computational overhead by 25% using MATLAB's computer vision libraries",
+        "Created user-friendly GUI for medical professionals"
+      ],
+      category: "Computer Vision"
+    }
+  ]
+};
