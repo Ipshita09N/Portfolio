@@ -2,7 +2,7 @@
 2|  "name": "frontend",
 3|  "version": "0.1.0",
 4|  "private": true,
-5|  "homepage": "https://Ipshita09N.github.io/portfolio",
+5|  "homepage": "https://Ipshita09N.github.io/Portfolio",
 6|  "dependencies": {
 7|    "@hookform/resolvers": "^5.0.1",
 8|    "@radix-ui/react-accordion": "^1.2.8",
@@ -570,6 +570,7 @@
 108|    }
 109|  ]
 110|};
+
 
 
 
